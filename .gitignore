@@ -274,3 +274,6 @@ celerybeat-schedule
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+
+# aws build
+*.zip
