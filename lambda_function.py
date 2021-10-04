@@ -15,10 +15,14 @@ def lambda_handler(event, context):
         result = [{
             'id': row[0],
             'name': row[1],
-            'movie_id': row[2]
+            'movieId': row[2]
         } for row in cur]
         logger.info(result)
     return {
         'statusCode': 200,
+        'headers': {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': True
+        },
         'body': json.dumps(result)
     }
